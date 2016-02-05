@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // test
+        // oo
         RxProviders rxProviders = new RxCache.Builder().persistence(getApplicationContext().getFilesDir()).using(RxProviders.class);
         rxProviders.getMessage(Observable.just("message")).subscribe(new Action1<String>() {
             @Override

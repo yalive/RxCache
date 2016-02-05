@@ -11,12 +11,14 @@ import rx.functions.Action1;
  * Created by victor on 21/01/16.
  */
 public class MainActivity extends Activity {
-    @Override protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        // test
         RxProviders rxProviders = new RxCache.Builder().persistence(getApplicationContext().getFilesDir()).using(RxProviders.class);
         rxProviders.getMessage(Observable.just("message")).subscribe(new Action1<String>() {
-            @Override public void call(String message) {
+            @Override
+            public void call(String message) {
                 assert message.equals(message);
             }
         });
